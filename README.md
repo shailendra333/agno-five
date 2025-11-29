@@ -4,6 +4,34 @@
 
 An interactive educational project demonstrating the 5 levels of AI agent architecture based on [Ashpreet Bedi](https://twitter.com/ashpreetbedi)'s framework. This project provides working demos for each level of agent complexity using the [Agno](https://agno.com) framework.
 
+The 5 Levels of AI Agents
+
+Lets explore the 5 levels of AI Agents, from simple to complex. Always start with level 1 and add complexity as needed.
+
+Level 1: Agent with tools and instructions. When people say agents are just LLM + tool calls in a loop, this is what they mean (this also tells you their level of understanding).
+
+Instructions "teach" the Agent how to achieve its task and tools let Agents interact with external environments to push or pull data.
+
+Level 2: Agent with knowledge and storage. Rarely does a model have all the information it needs to achieve its task and we obviously can't jam everything in the context, so we give the Agent knowledge that it searches at runtime (i.e Agentic RAG or Dynamic few-shot). 
+
+Knowledge search needs to be hybrid (full-text and semantic). Hybrid search + reranking is the best out-of-the-box Agentic Search strategy you can use.
+
+Storage saves the Agent's state in a database. LLM calls are "stateless" and storage makes Agents "stateful" by storing messages in a database and adding them to the current call as needed. 
+
+Level 3: Agent with memory and reasoning. Memory let's an Agent remember details about a user and personalize its responses across sessions. This is a fairly new concept that everyone is still exploring. The part of memory im the most excited about is "self-learning", more on this soon. 
+
+Reasoning is a key feature that every agent builder should know when and how to use. It not only improves cognitive reasoning (understanding of data and instructions) but also improves the success rate of each step.
+
+Level 4: Multi Agent Teams. Agents work best when they have a narrow scope (i.e. specialized to a domain) and a reasonably small set of tools (<10 ish). By putting agents together in a team, we can increase the overall capabilities and solve broader, more complex problems. 
+
+Remember to add reasoning, otherwise the Team leader struggles to work on complex tasks. My current (2025) belief is that autonomous multi-agent teams don't work. They work <1/2 the time and thats no good. 
+
+Agno comes with an industry leading multi-agent architecture that supports 3 modes of execution: coordinate, route and collaborate with the ability to automatically manage agentic memory and context.
+
+Level 5: Agentic Systems. APIs (i.e. servers) that take in a request, asynchronously complete the task and stream back the result. These are hard, very hard - when the request comes in we need to save the state in a database, trigger an async job and stream the results back as they're ready. Websockets can work here, but they are not an each tech to work with. 
+
+Agentic systems is where the $ is and what everyone is trying to build. We've put out the Agent API, Agent UI and detailed documentation on how to build them. I hope to write more on this to help AI engineers build better systems.
+
 ## 📚 Overview
 
 This project demonstrates the progressive complexity of AI agents, from simple instruction-following tools to complete agentic systems. As Ashpreet Bedi notes: **"Always start with level 1 and add complexity as needed."**
